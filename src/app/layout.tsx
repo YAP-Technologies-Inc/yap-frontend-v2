@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Goyap",
-  description: "",
+  title: "Yap2Learn",
+  description: "Making language learning fun and rewarding",
 };
 
 export default function RootLayout({

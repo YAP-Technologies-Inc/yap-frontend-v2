@@ -7,6 +7,7 @@ module.exports = {
         primary: "var(--primary)",     
         secondary: "var(--secondary)",
         treteriary: "var(--treteriary)",
+        quaternary: "var(--quaternary)",
       },
     },
   },

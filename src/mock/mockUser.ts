@@ -8,4 +8,8 @@ export const mockUserProfile = {
   learningLanguage: 'Spanish',
   streakDays: 5,
   tokenBalance: 320,
+  lessonProgress: {
+    totalLessons: 5,
+    completedLessons: 1
+  }
 };

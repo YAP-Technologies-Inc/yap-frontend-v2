@@ -10,11 +10,11 @@ const AuthButton: React.FC<AuthButtonProps> = ({ icon, label, onClick, className
   <button
     onClick={onClick}
     className="flex items-center justify-center w-full py-3 my-2 rounded-full 
-              bg-white text-black shadow-sm border border-gray-300 hover:shadow-md transition"
+              bg-quaternary text-tertiary shadow-sm border border-gray-300 hover:shadow-md transition"
   >
     <span className="mr-2">{icon}</span>
     <span>{label}</span>
-  </button>
+  </button> 
   );
 };
 export default AuthButton;

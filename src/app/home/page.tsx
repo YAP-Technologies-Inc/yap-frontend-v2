@@ -1,14 +1,25 @@
-import HeaderGreeting from "@/components/dashboard/HeaderGreeting";
-import BalanceCard from "@/components/dashboard/BalanceCard";
+'use client';
+import { useState } from 'react';
+import SplashScreen from '@/components/SplashScreen';
+import HeaderGreeting from '@/components/dashboard/HeaderGreeting';
+import BalanceCard from '@/components/dashboard/BalanceCard';
+import DailyStreak from '@/components/dashboard/DailyStreak';
+
 export default function HomePage() {
-  return (
-    <div className="bg-tertiary min-h-screen w-full flex flex-col items-center px-4 py-2">
+  const [showSplash, setShowSplash] = useState(true);
+
+  return showSplash ? (
+    <SplashScreen onFinish={() => setShowSplash(false)} />
+  ) : (
+    <div className="bg-tertiary min-h-screen w-full flex flex-col items-start">
       <HeaderGreeting />
-      
-      <div className="w-full max-w-md mt-4 flex justify-center">
+      <div className="flex-row flex items-center justify-center w-full max-w-4xl mx-auto px-4 py-6">
         <BalanceCard />
       </div>
+      <div className="flex-row flex items-center justify-center w-full max-w-4xl mx-auto px-4 py-6">
+        <DailyStreak />
+      </div>
+
     </div>
   );
 }
-

@@ -14,13 +14,13 @@ interface AuthCardProps {
 
 export default function AuthCard({ onEmailClick }: AuthCardProps) {
   return (
-  <div className="min-h-screen max-h-screen w-full flex items-end justify-center bg-primary overflow-y-auto">
+  <div className="min-h-screen max-h-screen w-full flex items-end justify-center overflow-y-auto">
 
       <div
         className="bg-tertiary w-full px-6 py-10 rounded-t-3xl shadow-lg
                    sm:max-w-md sm:px-8 sm:py-12
                    lg:max-w-lg xl:max-w-xl
-                  flex flex-col items-center justify-between h-auto min-h-[45vh]"
+                  flex flex-col items-center justify-between h-auto min-h-[50vh]"
 
       >
         <div className="w-full">
