@@ -10,9 +10,10 @@ import {
 
 interface AuthCardProps {
   onEmailClick: () => void;
+  onSwitch: () => void;
 }
 
-export default function AuthCard({ onEmailClick }: AuthCardProps) {
+export default function AuthCard({ onEmailClick, onSwitch }: AuthCardProps) {
   return (
   <div className="min-h-screen max-h-screen w-full flex items-end justify-center overflow-y-auto">
 
@@ -37,10 +38,12 @@ export default function AuthCard({ onEmailClick }: AuthCardProps) {
           <AuthButton icon={<TablerBrandGoogle />} label="Continue with Google" />
         </div>
 
-        <p className="text-center text-sm mt-6 text-[#5C4B4B]">
-          Already have an account?{" "}
-          <span className="underline cursor-pointer">Sign in</span>
-        </p>
+        <p className="text-center text-sm mt-8 text-[#5C4B4B] absolute left-0 right-0 bottom-4">
+        Already have an account?{' '}
+        <span className="underline cursor-pointer" onClick={onSwitch}>
+          Sign in
+        </span>
+      </p>
       </div>
     </div>
   );

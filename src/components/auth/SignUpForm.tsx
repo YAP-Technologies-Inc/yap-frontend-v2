@@ -1,9 +1,10 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { useState } from 'react';
-import yapLogo from '@/assets/YAP.png';
-import { TablerX, TablerEye, TablerEyeOff } from '@/icons';
+import Image from "next/image";
+import { useState } from "react";
+import yapLogo from "@/assets/YAP.png";
+import { TablerX, TablerEye, TablerEyeOff } from "@/icons";
+import SecuringLoader from "../loading/SecuringLoader";
 interface EmailFormProps {
   onBack: () => void;
   onSwitch: () => void;
@@ -12,21 +13,29 @@ interface EmailFormProps {
 export default function SignUpForm({ onBack, onSwitch }: EmailFormProps) {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
+    name: "",
+    email: "",
+    password: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const [showLoader, setShowLoader] = useState(false);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Submitting:', formData);
-    // TODO: Hook this up to our auth logic, ensuring nothing can be
-    // seen on the frontend that shouldn't be.
+    setShowLoader(true);
   };
+  if (showLoader) return <SecuringLoader />;
+
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   console.log('Submitting:', formData);
+  //   // TODO: Hook this up to our auth logic, ensuring nothing can be
+  //   // seen on the frontend that shouldn't be.
+  // };
 
   return (
     <div className="min-h-screen w-full bg-tertiary px-6 py-6 relative flex flex-col justify-start items-center">
@@ -76,7 +85,7 @@ export default function SignUpForm({ onBack, onSwitch }: EmailFormProps) {
         />
         <div className="relative">
           <input
-            type={showPassword ? 'text' : 'password'}
+            type={showPassword ? "text" : "password"}
             name="password"
             placeholder="Password"
             value={formData.password}
@@ -102,7 +111,7 @@ export default function SignUpForm({ onBack, onSwitch }: EmailFormProps) {
 
       {/* footer, maybe component it for auth pages */}
       <p className="text-center text-sm mt-8 text-[#5C4B4B] absolute left-0 right-0 bottom-4">
-        Already have an account?{' '}
+        Already have an account?{" "}
         <span className="underline cursor-pointer" onClick={onSwitch}>
           Sign in
         </span>

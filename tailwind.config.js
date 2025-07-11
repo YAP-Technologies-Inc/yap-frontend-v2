@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "var(--primary)",     
+        primary: "var(--primary)",
         secondary: "var(--secondary)",
         treteriary: "var(--treteriary)",
         quaternary: "var(--quaternary)",

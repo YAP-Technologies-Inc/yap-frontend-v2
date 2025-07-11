@@ -1,10 +1,10 @@
-'use client';
-import { useState } from 'react';
-import cardImage from '@/assets/card.png';
-import paperImage from '@/assets/paper.png';
-import animalImage from '@/assets/animal.png';
-import Image from 'next/image';
-import YapIcon from './YapIcon';
+"use client";
+import { useState } from "react";
+import cardImage from "@/assets/card.png";
+import paperImage from "@/assets/paper.png";
+import animalImage from "@/assets/animal.png";
+import Image from "next/image";
+import YapIcon from "./YapIcon";
 
 interface SplashScreenProps {
   onFinish: () => void;
@@ -13,15 +13,15 @@ interface SplashScreenProps {
 const splashSlides = [
   {
     image: cardImage,
-    text: 'Speak daily and earn $YAP.',
+    text: "Speak daily and earn $YAP.",
   },
   {
     image: paperImage,
-    text: 'Get instant feedback',
+    text: "Get instant feedback",
   },
   {
     image: animalImage,
-    text: 'Keep your streak',
+    text: "Keep your streak",
   },
 ];
 
@@ -42,21 +42,26 @@ export default function SplashScreen({ onFinish }: SplashScreenProps) {
       </div>
 
       <div className="flex flex-col items-center text-center mt-10">
-        <Image
-          src={splashSlides[index].image}
-          alt={`Splash ${index + 1}`}
-          className="w-full h-auto object-contain mb-6"
-        />
-        <p className="text-xl font-semibold text-[#2D1C1C] leading-snug max-w-md">
+        <div className="w-full sm:max-w-2xl mb-6 h-[300px] flex items-center justify-center">
+          <Image
+            src={splashSlides[index].image}
+            alt={`Splash ${index + 1}`}
+            width={800}
+            height={600}
+            className="max-h-full object-contain"
+          />
+        </div>
+
+        <p className="text-3xl font-semibold text-quaternary leading-snug max-w-md">
           {splashSlides[index].text.toUpperCase()}
         </p>
       </div>
 
       <button
         onClick={() => (isLastSlide ? onFinish() : setIndex(index + 1))}
-        className="bg-primary text-white py-3 px-6 rounded-full shadow-md w-full max-w-sm"
+        className="bg-quaternary text-white py-3 px-6 rounded-full shadow-md w-full max-w-sm"
       >
-        {isLastSlide ? 'Start' : 'Next'}
+        {isLastSlide ? "Start" : "Next"}
       </button>
     </div>
   );

@@ -1,15 +1,14 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import AuthCard from '@/components/auth/AuthCard';
-import SignUpForm from '@/components/auth/SignUpForm';
-import LoginForm from '@/components/auth/LoginForm';
-import group from '@/assets/group.png';
+import { useState } from "react";
+import AuthCard from "@/components/auth/AuthCard";
+import SignUpForm from "@/components/auth/SignUpForm";
+import LoginForm from "@/components/auth/LoginForm";
+import group from "@/assets/group.png";
 
 export default function AuthPage() {
-  type FormType = 'signup' | 'login' | null;
+  type FormType = "signup" | "login" | null;
   const [formType, setFormType] = useState<FormType>(null);
-  
 
   return (
     <div className="min-h-screen bg-quaternary relative flex flex-col items-center justify-center overflow-hidden">
@@ -20,22 +19,25 @@ export default function AuthPage() {
       />
 
       <div className="relative z-10 w-full flex items-center justify-center">
-        {formType === 'signup' && (
+        {formType === "signup" && (
           <SignUpForm
             onBack={() => setFormType(null)}
-            onSwitch={() => setFormType('login')}
+            onSwitch={() => setFormType("login")}
           />
         )}
 
-        {formType === 'login' && (
+        {formType === "login" && (
           <LoginForm
             onBack={() => setFormType(null)}
-            onSwitch={() => setFormType('signup')}
+            onSwitch={() => setFormType("signup")}
           />
         )}
 
         {formType === null && (
-          <AuthCard onEmailClick={() => setFormType('signup')} />
+          <AuthCard
+            onEmailClick={() => setFormType("signup")}
+            onSwitch={() => setFormType("login")}
+          />
         )}
       </div>
     </div>

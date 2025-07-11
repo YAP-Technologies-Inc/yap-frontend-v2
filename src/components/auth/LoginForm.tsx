@@ -10,7 +10,7 @@ interface EmailFormProps {
   onSwitch: () => void;
 }
 
-export default function LoginForm({ onBack }: EmailFormProps) {
+export default function LoginForm({ onBack, onSwitch }: EmailFormProps) {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     email: '',
