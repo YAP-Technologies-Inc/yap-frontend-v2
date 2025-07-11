@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import AuthButton from '@/components/auth/AuthButtons';
-import { TablerBrandGoogle, TablerBrandAppleFilled, TablerMail } from '@/icons';
-import yapLogo from '@/assets/YAP.png';
-import group from '@/assets/group.png';
-import Image from 'next/image';
-import AuthLogo from '@/components/auth/AuthLogo';
+import AuthButton from "@/components/auth/AuthButtons";
+import { TablerBrandGoogle, TablerBrandAppleFilled, TablerMail } from "@/icons";
+import yapLogo from "@/assets/YAP.png";
+import group from "@/assets/group.png";
+import Image from "next/image";
+import AuthLogo from "@/components/auth/AuthLogo";
 interface AuthCardProps {
   onEmailClick: () => void;
   onSwitch: () => void;
@@ -14,11 +14,15 @@ interface AuthCardProps {
 export default function AuthCard({ onEmailClick, onSwitch }: AuthCardProps) {
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-start bg-quaternary">
-     <AuthLogo />
+      <AuthLogo />
 
       {/* Group Image */}
       <div className="w-full max-w-md pt-28 px-6">
-        <img src={group.src} alt="Group" className="w-full object-cover rounded-xl" />
+        <img
+          src={group.src}
+          alt="Group"
+          className="w-full object-cover rounded-xl"
+        />
       </div>
 
       {/* Auth Card */}
@@ -42,12 +46,18 @@ export default function AuthCard({ onEmailClick, onSwitch }: AuthCardProps) {
             onClick={onEmailClick}
           />
           <div className="text-center my-3 text-sm text-[#A59C9C]">OR</div>
-          <AuthButton icon={<TablerBrandAppleFilled />} label="Continue with Apple" />
-          <AuthButton icon={<TablerBrandGoogle />} label="Continue with Google" />
+          <AuthButton
+            icon={<TablerBrandAppleFilled />}
+            label="Continue with Apple"
+          />
+          <AuthButton
+            icon={<TablerBrandGoogle />}
+            label="Continue with Google"
+          />
         </div>
 
         <p className="text-center text-sm mt-8 text-[#5C4B4B]">
-          Already have an account?{' '}
+          Already have an account?{" "}
           <span className="underline cursor-pointer" onClick={onSwitch}>
             Sign in
           </span>
