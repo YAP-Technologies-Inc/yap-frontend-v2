@@ -1,19 +1,15 @@
 import { mockUserProfile } from '@/mock/mockUser';
-import pfp from '@/assets/pfp.png';
 
 export default function HeaderGreeting() {
+  const firstInitial = mockUserProfile.name.charAt(0).toUpperCase();
+
   return (
     <div className="flex items-center justify-start w-full px-4 pt-10 pb-4">
-      {/* Avatar section, currently a default logo */}
-      <div className="w-12 h-12 bg-[#FFD700] rounded-full mr-3 flex items-center justify-center">
-        <img
-          src={pfp.src}
-          alt="Profile"
-          className="w-full h-full rounded-full object-cover"
-        />
+
+      <div className="w-12 h-12 bg-blue-500 rounded-full mr-3 flex items-center justify-center">
+        <span className="text-white text-lg font-semibold">{firstInitial}</span>
       </div>
 
-      {/* Text content of greting*/}
       <div className="flex flex-col">
         <h1 className="text-lg font-bold text-[#2D1C1C] leading-tight">
           Welcome {mockUserProfile.name}

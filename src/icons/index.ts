@@ -6,3 +6,6 @@ export { TablerEye } from './EyeOpen';
 export { TablerEyeOff } from './EyeOff';
 export { TablerHome } from './Home';
 export { TablerChevronLeft } from './Chevron';
+export { TablerFileText } from './Lesson';
+export { TablerChartLine } from './Progress';
+export { TablerUser } from './User';

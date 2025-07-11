@@ -1,22 +1,40 @@
-import { TablerHome } from '@/icons';
+import {
+  TablerHome,
+  TablerUser,
+  TablerFileText,
+  TablerChartLine,
+} from '@/icons';
 
 export default function BottomNavBar() {
   return (
-    <div className="fixed w-full h-16 bottom-0 left-0 right-0 border-t text-black bg-primary border-gray-300 shadow-md">
-      <nav className="fixed bottom-0 left-0 w-full h-16 bg-white z-50 border-t shadow-md flex justify-around items-center">
-        {/* Add navigation items here */}
+    <div className="fixed w-full h-16 bottom-0 left-0 right-0  text-black ">
+      <nav className="fixed bottom-0 left-0 w-full h-16 bg-tertiary z-50 flex justify-around items-center">
+
         <div className="flex flex-col items-center">
-          <TablerHome className="text-tertiary hover:text-white w-6 h-6" />
-          <a href="/home" className="text-tertiary hover:text-white text-sm">
+          <TablerHome className="text-[#999595] w-6 h-6" />
+          <a href="/home" className="text-[#999595] text-sm">
             Home
           </a>
         </div>
-        <a href="/profile" className="text-tertiary hover:text-white">
-          Profile
-        </a>
-        <a href="/settings" className="text-tertiary hover:text-white">
-          Settings
-        </a>
+
+        <div className="flex flex-col items-center">
+          <TablerFileText className="text-[#999595] w-6 h-6" />
+          <a href="/learn" className="text-[#999595] text-sm">
+            Learn
+          </a>
+        </div>
+        <div className="flex flex-col items-center">
+          <TablerChartLine className="text-[#999595] w-6 h-6" />
+          <a href="/progress" className="text-[#999595] text-sm">
+            Progress
+          </a>
+        </div>
+        <div className="flex flex-col items-center">
+          <TablerUser className="text-[#999595] w-6 h-6" />
+          <a href="/profile" className="text-[#999595] text-sm">
+            Profile
+          </a>
+        </div>
       </nav>
     </div>
   );

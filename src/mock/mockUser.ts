@@ -6,6 +6,7 @@ export const mockUserProfile = {
   email: 'landon@example.com',
   nativeLanguage: 'English',
   learningLanguage: 'Spanish',
+  wallet: '0x1234567890abcdef1234567890abcdef12345678',
   streakDays: 5,
   tokenBalance: 320,
   lessonProgress: {
