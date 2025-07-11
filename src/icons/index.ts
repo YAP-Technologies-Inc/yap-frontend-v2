@@ -9,3 +9,4 @@ export { TablerChevronLeft } from './Chevron';
 export { TablerFileText } from './Lesson';
 export { TablerChartLine } from './Progress';
 export { TablerUser } from './User';
+export { TablerCheck } from './Check';
