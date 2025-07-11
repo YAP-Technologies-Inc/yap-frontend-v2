@@ -1,3 +1,4 @@
+
 /* Full screen centered layout */
 .loader-screen {
   height: 100vh;
@@ -23,8 +24,7 @@
   height: 120px;
   border-radius: 50%;
   border: 10px solid #f3f3f3;
-  border-top: 10px solid #ff1493; 
-  border-right: 10px solid #ff7f50; 
+  border-top: 10px solid var(--color-secondary); 
   animation: spin 1.2s linear infinite;
 }
 
