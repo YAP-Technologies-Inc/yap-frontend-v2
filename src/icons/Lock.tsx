@@ -1,4 +1,4 @@
-import React, { SVGProps } from 'react';
+import React, { SVGProps } from "react";
 export function TablerLock(props: SVGProps<SVGSVGElement>) {
   return (
     <svg

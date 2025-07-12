@@ -1,15 +1,19 @@
+// BottomNavBar.tsx
+// This component renders the bottom navigation bar for the app.
+// It includes links to Home, Learn, Progress, and Profile pages.
+// Needs to be rendered on every page essentially 
+
 import {
   TablerHome,
   TablerUser,
   TablerFileText,
   TablerChartLine,
-} from '@/icons';
+} from "@/icons";
 
 export default function BottomNavBar() {
   return (
     <div className="fixed w-full h-16 bottom-0 left-0 right-0  text-black ">
       <nav className="fixed bottom-0 left-0 w-full h-16 bg-tertiary z-50 flex justify-around items-center">
-
         <div className="flex flex-col items-center">
           <TablerHome className="text-[#999595] w-6 h-6" />
           <a href="/home" className="text-[#999595] text-sm">

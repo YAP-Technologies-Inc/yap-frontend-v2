@@ -1,11 +1,15 @@
-import { mockUserProfile } from '@/mock/mockUser';
+// HeaderGreeting.tsx
+// This component displays a personalized greeting in the dashboard header.
+// It shows the user's first initial and a welcome message.
+// Used in home page to greet the user and when starting lessons.
+// Need to pass in className later for when its rendered differnt
+import { mockUserProfile } from "@/mock/mockUser";
 
 export default function HeaderGreeting() {
   const firstInitial = mockUserProfile.name.charAt(0).toUpperCase();
 
   return (
     <div className="flex items-center justify-start w-full px-4 pt-10 pb-4">
-
       <div className="w-12 h-12 bg-blue-500 rounded-full mr-3 flex items-center justify-center">
         <span className="text-white text-lg font-semibold">{firstInitial}</span>
       </div>

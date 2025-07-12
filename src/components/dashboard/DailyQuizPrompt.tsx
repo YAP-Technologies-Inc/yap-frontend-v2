@@ -1,3 +1,8 @@
+// DailyQuizPrompt.tsx
+// This component renders the daily quiz prompt card in the dashboard.
+// It displays the quiz title, description, and a list of words to use.
+// The card is styled based on whether the quiz is unlocked or not.
+
 "use client";
 import coin from "../../assets/coin.png";
 import { TablerLock } from "@/icons/Lock";

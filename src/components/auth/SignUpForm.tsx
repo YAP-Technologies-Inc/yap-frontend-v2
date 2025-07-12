@@ -1,22 +1,25 @@
-'use client';
+// SignUpForm.tsx
+// This component renders the sign-up form for new users.
+// It includes fields for name, email, password, and confirm password.
+// TODO: Hook this up to our auth logic, ensuring nothing can be seen on the frontend that shouldn't be.
+// TODO: Tabler Eyes need to be unique for each input field
 
-import Image from 'next/image';
-import { useState } from 'react';
-import yapLogo from '@/assets/YAP.png';
-import { TablerChevronLeft, TablerEye, TablerEyeOff } from '@/icons';
-import SecuringLoader from '../loading/SecuringLoader';
+"use client";
+import { useState } from "react";
+import { TablerChevronLeft, TablerEye, TablerEyeOff } from "@/icons";
+import SecuringLoader from "../loading/SecuringLoader";
 interface EmailFormProps {
   onBack: () => void;
   onSwitch: () => void;
 }
-import AuthLogo from '@/components/auth/AuthLogo';
+import AuthLogo from "@/components/auth/AuthLogo";
 export default function SignUpForm({ onBack, onSwitch }: EmailFormProps) {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,7 +31,7 @@ export default function SignUpForm({ onBack, onSwitch }: EmailFormProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (formData.password !== formData.confirmPassword) {
-      alert('Passwords do not match.');
+      alert("Passwords do not match.");
       return;
     }
 
@@ -90,7 +93,7 @@ export default function SignUpForm({ onBack, onSwitch }: EmailFormProps) {
         />
         <div className="relative">
           <input
-            type={showPassword ? 'text' : 'password'}
+            type={showPassword ? "text" : "password"}
             name="password"
             placeholder="Password"
             value={formData.password}
@@ -112,7 +115,7 @@ export default function SignUpForm({ onBack, onSwitch }: EmailFormProps) {
         </div>
         <div className="relative">
           <input
-            type={showPassword ? 'text' : 'password'}
+            type={showPassword ? "text" : "password"}
             name="confirmPassword"
             placeholder="Re-enter Password"
             value={formData.confirmPassword}
@@ -133,15 +136,14 @@ export default function SignUpForm({ onBack, onSwitch }: EmailFormProps) {
           </button>
         </div>
         <div className="fixed bottom-0 left-0 right-0 px-6 pb-12 bg-tertiary">
-        <button
-          type="submit"
-          className="w-full bg-[#2D1C1C] text-white font-semibold py-3 rounded-full shadow-md mb-3"
-        >
-          Next
-        </button>
-      </div>
+          <button
+            type="submit"
+            className="w-full bg-[#2D1C1C] text-white font-semibold py-3 rounded-full shadow-md mb-3"
+          >
+            Next
+          </button>
+        </div>
       </form>
-      
     </div>
   );
 }

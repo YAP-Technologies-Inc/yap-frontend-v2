@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Outfit } from "next/font/google";
 import "./globals.css";
+
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
 //   subsets: ["latin"],
@@ -31,7 +32,9 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${outfit.variable} font-sans antialiased`}
-        style={{ fontFamily: "var(--font-outfit), sans-serif" }} 
+        style={{
+          fontFamily: "var(--font-outfit), Arial, Helvetica, sans-serif",
+        }}
       >
         {children}
       </body>

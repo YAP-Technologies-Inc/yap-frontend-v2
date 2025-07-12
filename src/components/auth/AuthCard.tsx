@@ -2,10 +2,9 @@
 
 import AuthButton from "@/components/auth/AuthButtons";
 import { TablerBrandGoogle, TablerBrandAppleFilled, TablerMail } from "@/icons";
-import yapLogo from "@/assets/YAP.png";
 import group from "@/assets/group.png";
 import Image from "next/image";
-import AuthLogo from "@/components/auth/AuthLogo";
+import AuthLogo from "../../components/auth/AuthLogo";
 interface AuthCardProps {
   onEmailClick: () => void;
   onSwitch: () => void;

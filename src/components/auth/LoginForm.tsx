@@ -1,10 +1,12 @@
-'use client';
+// LoginForm.tsx
+// This component renders the login form for existing users.
+// It includes fields for email and password.
 
-import { useRouter } from 'next/navigation';
-import { useState, useEffect } from 'react';
-import yapLogo from '@/assets/YAP.png';
-import { TablerChevronLeft, TablerEye, TablerEyeOff } from '@/icons';
-import AuthLogo from '@/components/auth/AuthLogo';
+"use client";
+import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
+import { TablerChevronLeft, TablerEye, TablerEyeOff } from "@/icons";
+import AuthLogo from "@/components/auth/AuthLogo";
 interface EmailFormProps {
   onBack: () => void;
   onSwitch: () => void;
@@ -13,8 +15,8 @@ interface EmailFormProps {
 export default function LoginForm({ onBack, onSwitch }: EmailFormProps) {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -23,11 +25,11 @@ export default function LoginForm({ onBack, onSwitch }: EmailFormProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Logging in:', formData);
+    console.log("Logging in:", formData);
     // TODO: Hook this up to our login logic
   };
 
-    const router = useRouter();
+  const router = useRouter();
   return (
     <div className="min-h-screen w-full bg-tertiary px-6 py-6 relative flex flex-col justify-start items-center">
       {/* back button */}
@@ -65,7 +67,7 @@ export default function LoginForm({ onBack, onSwitch }: EmailFormProps) {
         />
         <div className="relative w-full">
           <input
-            type={showPassword ? 'text' : 'password'}
+            type={showPassword ? "text" : "password"}
             name="password"
             placeholder="Password"
             value={formData.password}
@@ -89,7 +91,7 @@ export default function LoginForm({ onBack, onSwitch }: EmailFormProps) {
         <div className="w-full max-w-sm flex justify-end mt-1">
           <button
             type="button"
-            onClick={() => router.push('/forgot-password')}
+            onClick={() => router.push("/forgot-password")}
             className="text-sm text-[#5C4B4B] underline"
           >
             Forgot password?

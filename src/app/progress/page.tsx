@@ -1,5 +1,5 @@
 
-import BottomNavBar from "@/components/BottomNavBar";
+import BottomNavBar from "@/components/layout/BottomNavBar";
 
 export default function Progress() {
     return (    

@@ -1,12 +1,16 @@
+// home/page.tsx
+// This is the main page of the application, serving as the dashboard for users.
+// It is very component-heavy, displaying various user-related information such as balance, daily streak, lessons, and quizzes.
+// Makes it easyer to manage the layout and components of the home page.
+
 "use client";
-import { useState } from "react";
 import HeaderGreeting from "@/components/dashboard/HeaderGreeting";
 import BalanceCard from "@/components/dashboard/BalanceCard";
 import DailyStreak from "@/components/dashboard/DailyStreak";
-import BottomNavBar from "@/components/BottomNavBar";
-import LessonCard from "@/components/LessonCard";
-import DailyQuizCard from "@/components/dashboard/DailyQuizPrompt";
-import { lessons } from "@/mock/mockLesson";
+import BottomNavBar from "@/components/layout/BottomNavBar";
+import LessonCard from "@/components/dashboard/LessonCard";
+import DailyQuizCard from "../../components/dashboard/DailyQuizPrompt";
+import { lessons } from "../../mock/mockLesson";
 
 export default function HomePage() {
   return (

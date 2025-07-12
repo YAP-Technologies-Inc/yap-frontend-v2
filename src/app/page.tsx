@@ -1,38 +1,34 @@
-'use client';
-
-import Image from 'next/image';
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import yapLogo from '../assets/YAP.png';
+"use client";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import yapLogo from "../assets/YAP.png";
 
 export default function SplashPage() {
   const router = useRouter();
 
-  //redurect users after 2s to login page
+  // Redirect to the auth page after a short delay
+  // This simulates a splash screen effect before showing the auth options.
+  // Maybe replaced with a more elaborate one that ensures the app is ready.
   useEffect(() => {
     const timeout = setTimeout(() => {
-      router.push('/auth');
+      router.push("/auth");
     }, 2000);
 
-    //clear the timeout if the component unmounts before the timeout completes
     return () => clearTimeout(timeout);
   }, [router]);
+
+  // Disable scrolling while the splash screen is active
+  // This prevents the user from scrolling during the splash screen display.
   useEffect(() => {
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
     return () => {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     };
   }, []);
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-tertiary">
-      <Image
-        src={yapLogo}
-        alt="YAP Logo"
-        width={160}
-        height={160}
-        priority
-      />
+    <div className="flex items-center justify-center min-h-screen bg-primary">
+      <img src={yapLogo.src} alt="YAP Logo" width={160} height={160} priority />
     </div>
   );
 }

@@ -1,10 +1,16 @@
+// SplashScreen.tsx
+// This component displays a 3-slide onboarding splash screen
+// and allows users to skip or proceed to the main app.
+// It is used after the "Securing your account..." loader.
+// And renders after the loader completes.
+
 "use client";
 import { useState } from "react";
 import cardImage from "@/assets/card.png";
 import paperImage from "@/assets/paper.png";
 import animalImage from "@/assets/animal.png";
 import Image from "next/image";
-import YapIcon from "./YapIcon";
+import YapIcon from "../layout/YapIcon";
 
 interface SplashScreenProps {
   onFinish: () => void;

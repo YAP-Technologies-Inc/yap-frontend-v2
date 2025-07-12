@@ -1,14 +1,18 @@
-'use client';
+// forgot-password/page.tsx
+// This page allows users to reset their password by entering their email address.
+// TODO: Create the animation once you submit email to inform user that an email has been sent.
 
-import { useState } from 'react';
-import AuthLogo from '@/components/auth/AuthLogo';
-import { TablerX } from '@/icons';
-import { useRouter } from 'next/navigation';
+"use client";
+
+import { useState } from "react";
+import AuthLogo from "@/components/auth/AuthLogo";
+import { TablerX } from "@/icons";
+import { useRouter } from "next/navigation";
 interface EmailFormProps {
   onBack: () => void;
 }
 export default function ForgotPasswordForm({ onBack }: EmailFormProps) {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -16,7 +20,7 @@ export default function ForgotPasswordForm({ onBack }: EmailFormProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Email submitted:', email);
+    console.log("Email submitted:", email);
     // TODO: Hook this up to forgot password logic
   };
   const router = useRouter();

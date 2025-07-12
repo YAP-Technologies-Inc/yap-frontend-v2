@@ -1,3 +1,8 @@
+// BalanceCard.tsx
+// This component displays the user's balance in the dashboard.
+// It shows the amount of $YAP tokens the user has.
+// The balance is fetched from the mock user profile and displayed with a coin icon for now
+
 import { mockUserProfile } from "@/mock/mockUser";
 import coin from "@/assets/coin.png";
 
