@@ -2,19 +2,24 @@
 // This component renders the sign-up form for new users.
 // It includes fields for name, email, password, and confirm password.
 // TODO: Hook this up to our auth logic, ensuring nothing can be seen on the frontend that shouldn't be.
-// TODO: Tabler Eyes need to be unique for each input field
 
 "use client";
 import { useState } from "react";
 import { TablerChevronLeft, TablerEye, TablerEyeOff } from "@/icons";
 import SecuringLoader from "../loading/SecuringLoader";
+import AuthLogo from "@/components/auth/AuthLogo";
+import SelectLanguageForm from "@/components/auth/SelectLanguageForm";
+
 interface EmailFormProps {
   onBack: () => void;
   onSwitch: () => void;
 }
-import AuthLogo from "@/components/auth/AuthLogo";
+
 export default function SignUpForm({ onBack, onSwitch }: EmailFormProps) {
-  const [showPassword, setShowPassword] = useState(false);
+  const [step, setStep] = useState<"signup" | "language" | "loading">("signup");
+  const [showPassword1, setShowPassword1] = useState(false);
+  const [showPassword2, setShowPassword2] = useState(false);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,27 +31,18 @@ export default function SignUpForm({ onBack, onSwitch }: EmailFormProps) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const [showLoader, setShowLoader] = useState(false);
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (formData.password !== formData.confirmPassword) {
       alert("Passwords do not match.");
       return;
     }
-
-    setShowLoader(true);
-    // proceed with signup
+    setStep("language");
   };
 
-  if (showLoader) return <SecuringLoader />;
-
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   console.log('Submitting:', formData);
-  //   // TODO: Hook this up to our auth logic, ensuring nothing can be
-  //   // seen on the frontend that shouldn't be.
-  // };
+  if (step === "loading") return <SecuringLoader />;
+  if (step === "language")
+    return <SelectLanguageForm onNext={() => setStep("loading")} />;
 
   return (
     <div className="min-h-screen w-full bg-tertiary px-6 py-6 relative flex flex-col justify-start items-center">
@@ -93,7 +89,7 @@ export default function SignUpForm({ onBack, onSwitch }: EmailFormProps) {
         />
         <div className="relative">
           <input
-            type={showPassword ? "text" : "password"}
+            type={showPassword1 ? "text" : "password"}
             name="password"
             placeholder="Password"
             value={formData.password}
@@ -103,19 +99,20 @@ export default function SignUpForm({ onBack, onSwitch }: EmailFormProps) {
           />
           <button
             type="button"
-            onClick={() => setShowPassword(!showPassword)}
+            onClick={() => setShowPassword1(!showPassword1)}
             className="absolute right-4 top-1/2 -translate-y-1/2 text-[#5C4B4B]"
           >
-            {showPassword ? (
+            {showPassword1 ? (
               <TablerEyeOff className="w-5 h-5" />
             ) : (
               <TablerEye className="w-5 h-5" />
             )}
           </button>
         </div>
+
         <div className="relative">
           <input
-            type={showPassword ? "text" : "password"}
+            type={showPassword2 ? "text" : "password"}
             name="confirmPassword"
             placeholder="Re-enter Password"
             value={formData.confirmPassword}
@@ -125,16 +122,17 @@ export default function SignUpForm({ onBack, onSwitch }: EmailFormProps) {
           />
           <button
             type="button"
-            onClick={() => setShowPassword(!showPassword)}
+            onClick={() => setShowPassword2(!showPassword2)}
             className="absolute right-4 top-1/2 -translate-y-1/2 text-[#5C4B4B]"
           >
-            {showPassword ? (
+            {showPassword2 ? (
               <TablerEyeOff className="w-5 h-5" />
             ) : (
               <TablerEye className="w-5 h-5" />
             )}
           </button>
         </div>
+
         <div className="fixed bottom-0 left-0 right-0 px-6 pb-12 bg-tertiary">
           <button
             type="submit"

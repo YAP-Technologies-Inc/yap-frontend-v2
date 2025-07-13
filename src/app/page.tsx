@@ -28,7 +28,7 @@ export default function SplashPage() {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-tertiary">
-      <img src={yapLogo.src} alt="YAP Logo" width={160} height={160} priority />
+      <img src={yapLogo.src} alt="YAP Logo" width={160} height={160} />
     </div>
   );
 }
