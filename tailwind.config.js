@@ -1,13 +1,19 @@
 // tailwind.config.js
 module.exports = {
-  content: ["./src/**/*.{ts,tsx}"],
+  content: ['./src/**/*.{ts,tsx}'],
   theme: {
     extend: {
       colors: {
-        primary: "var(--primary)",
-        secondary: "var(--secondary)",
-        treteriary: "var(--treteriary)",
-        quaternary: "var(--quaternary)",
+        primary: 'var(--color-primary)',
+        secondary: 'var(--color-secondary)',
+        tertiary: 'var(--color-tertiary)',
+        error: 'var(--color-error)',
+
+        bgPrimary: 'var(--color-background-primary)',
+        bgSecondary: 'var(--color-background-secondary)',
+        textOnDark: 'var(--color-text-dark-bg)',
+
+        foreground: 'var(--color-foreground)',
       },
     },
   },

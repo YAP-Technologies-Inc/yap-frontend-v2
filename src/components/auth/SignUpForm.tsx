@@ -50,7 +50,7 @@ export default function SignUpForm({ onBack, onSwitch }: EmailFormProps) {
     );
 
   return (
-    <div className="min-h-screen w-full bg-tertiary px-6 py-6 relative flex flex-col justify-start items-center">
+    <div className="min-h-screen w-full bg-background-primary px-6 py-6 relative flex flex-col justify-start items-center">
       {/* return to prev page*/}
       <button
         onClick={onBack}
@@ -138,7 +138,7 @@ export default function SignUpForm({ onBack, onSwitch }: EmailFormProps) {
           </button>
         </div>
 
-        <div className="fixed bottom-0 left-0 right-0 px-6 pb-12 bg-tertiary">
+        <div className="fixed bottom-0 left-0 right-0 px-6 pb-12 bg-background-primary">
           <button
             type="submit"
             className="w-full bg-[#2D1C1C] text-white font-semibold py-3 rounded-full shadow-md mb-3"

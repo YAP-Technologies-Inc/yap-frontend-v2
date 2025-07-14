@@ -18,7 +18,7 @@ export default function SelectLanguageForm({ onNext, onBack }: Props) {
   };
 
   return (
-    <div className="min-h-screen w-full bg-tertiary px-6 py-6 relative flex flex-col">
+    <div className="min-h-screen w-full bg-background-primary px-6 py-6 relative flex flex-col">
       {/* Back Button */}
       <button
         onClick={onBack}

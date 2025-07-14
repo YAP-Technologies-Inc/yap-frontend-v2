@@ -18,7 +18,7 @@ const AuthButton: React.FC<AuthButtonProps> = ({
     <button
       onClick={onClick}
       className="flex items-center justify-center w-full py-3 my-2 rounded-full 
-              bg-quaternary text-tertiary shadow-sm border border-gray-300 hover:shadow-md transition"
+              bg-quaternary text-secondary shadow-sm border border-gray-300 hover:shadow-md transition"
     >
       <span className="mr-2">{icon}</span>
       <span>{label}</span>

@@ -14,7 +14,7 @@ import { lessons } from '../../mock/mockLesson';
 
 export default function HomePage() {
   return (
-    <div className="bg-tertiary min-h-screen w-full flex flex-col relative">
+    <div className="bg-background-primary min-h-screen w-full flex flex-col relative">
       {/* Render Header */}
       <div className="flex-1 w-full max-w-4xl mx-auto px-4 py-6 pb-24">
         <HeaderGreeting />

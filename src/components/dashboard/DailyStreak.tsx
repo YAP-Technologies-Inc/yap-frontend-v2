@@ -83,7 +83,7 @@ export default function DailyStreak() {
   const totalStreak = localStorage.getItem(TOTAL_STREAK_KEY) || '0';
 
   return (
-    <div className="bg-quaternary w-full rounded-xl shadow px-6 py-4 flex flex-col border-b-2 border-gray-300 relative">
+    <div className="bg-secondary w-full rounded-xl shadow px-6 py-4 flex flex-col border-b-2 border-gray-300 relative">
       {/* Header */}
       <div className="text-white flex items-center justify-between w-full mb-4">
         <h3 className="text-lg font-semibold">🔥 Daily Streak</h3>
@@ -105,7 +105,7 @@ export default function DailyStreak() {
                   completed
                     ? 'bg-quaternary text-black'
                     : 'border-white text-white'
-                } ${isToday ? 'ring-2 ring-tertiary' : ''}`}
+                } ${isToday ? 'ring-2 ring-background-primary' : ''}`}
               >
                 {completed && <TablerCheck className="w-5 h-5 text-white" />}
               </div>

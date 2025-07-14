@@ -7,7 +7,7 @@ export default function CheckEmail() {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen w-full bg-tertiary px-6 py-6 relative flex flex-col justify-center items-center text-center">
+    <div className="min-h-screen w-full bg-background-primary px-6 py-6 relative flex flex-col justify-center items-center text-center">
       {/* Back button */}
       <button
         onClick={() => router.back()}

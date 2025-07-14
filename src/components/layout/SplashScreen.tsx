@@ -36,12 +36,12 @@ export default function SplashScreen({ onFinish }: SplashScreenProps) {
   const isLastSlide = index === splashSlides.length - 1;
 
   return (
-    <div className="min-h-screen w-full bg-tertiary flex flex-col items-center justify-between p-8">
+    <div className="min-h-screen w-full bg-background-primary flex flex-col items-center justify-between p-8">
       <div className="relative w-full flex justify-center items-center mt-2">
         <YapIcon />
         <button
           onClick={onFinish}
-          className="absolute right-0 top-1 text-sm text-quaternary hover:text-shadow-quaternary"
+          className="absolute right-0 top-1 text-sm text-secondary hover:text-shadow-secondary"
         >
           Skip
         </button>
@@ -58,14 +58,14 @@ export default function SplashScreen({ onFinish }: SplashScreenProps) {
           />
         </div>
 
-        <p className="text-3xl font-semibold text-quaternary leading-snug max-w-md">
+        <p className="text-3xl font-semibold text-secondary leading-snug max-w-md">
           {splashSlides[index].text.toUpperCase()}
         </p>
       </div>
 
       <button
         onClick={() => (isLastSlide ? onFinish() : setIndex(index + 1))}
-        className="bg-quaternary text-white py-3 px-6 rounded-full shadow-md w-full max-w-sm"
+        className="bg-secondary text-white py-3 px-6 rounded-full shadow-md w-full max-w-sm"
       >
         {isLastSlide ? "Start" : "Next"}
       </button>

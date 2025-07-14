@@ -43,7 +43,7 @@ export default function LessonUi({
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#FDF7F2] flex flex-col pt-4 pb-28 px-4">
+    <div className="min-h-screen w-full bg-background-primary flex flex-col pt-4 pb-28 px-4">
       {/* Exit + Progress bar */}
       <div className="w-screen flex items-center gap-3 px-6 mb-4 -ml-4">
         <button onClick={() => router.push('/home')} className="text-[#2D1C1C]">
@@ -66,7 +66,7 @@ export default function LessonUi({
         {/* Main Card */}
         <div className="relative z-10 bg-white w-full h-[45vh] rounded-2xl shadow-xl px-6 py-6 flex flex-col items-center justify-center text-center">
           {/* Count Progress */}
-          <div className="absolute top-3 right-4 text-xs text-[#5C4B4B]">
+          <div className="absolute top-3 right-4 text-xs text-secondary">
             {currentItem?.type === 'word'
               ? `Words ${
                   allSteps
@@ -82,11 +82,11 @@ export default function LessonUi({
                 }`}
           </div>
 
-          <h2 className="text-2xl font-bold text-[#2D1C1C] mb-2">
+          <h2 className="text-2xl font-bold text-secondary mb-2">
             {currentItem?.question || ''}
           </h2>
           {currentItem?.example_answer && (
-            <p className="text-[#5C4B4B] text-base leading-snug">
+            <p className="text-secondary text-base leading-snug">
               {currentItem.example_answer}
             </p>
           )}
@@ -133,7 +133,7 @@ export default function LessonUi({
           className="w-12 h-12 rounded-full bg-gray-300 shadow flex items-center justify-center"
           onClick={handleNext}
         >
-          <span className="text-sm font-bold text-[#2D1C1C]">⏭</span>
+          <span className="text-sm font-bold text-secondary">⏭</span>
         </button>
       </div>
     </div>

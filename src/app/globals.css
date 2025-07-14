@@ -1,14 +1,17 @@
 @import "tailwindcss";
 
-/* !!TODO
-  Properly add the colour pallete Brian has created for us from figma
-*/
-
 @theme {
-  --color-primary: #4372c4;
-  --color-secondary: #efc52a;
-  --color-tertiary: #e3ded4;
-  --color-quaternary: #2f1a1b;
+  --color-primary: #4372C4;
+  --color-secondary: #2F1A1B;
+  --color-tertiary: #F8B702;
+  --color-error: #EF4648;
+
+  --color-background-primary: #F0EBE1;
+  --color-background-secondary: #2F1A1B;
+  --color-text-dark-bg: #FBF5F2;
+
+  --color-foreground: #000000;
+
 }
 
 :root {
@@ -23,21 +26,13 @@
   }
 }
 
-@layer utilities {
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-}
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
 
 /* Used to remove default browser eye icons from popping up beside our icon */
 input[type="password"]::-ms-reveal,

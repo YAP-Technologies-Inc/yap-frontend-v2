@@ -31,7 +31,7 @@ export default function LoginForm({ onBack, onSwitch }: EmailFormProps) {
 
   const router = useRouter();
   return (
-    <div className="min-h-screen w-full bg-tertiary px-6 py-6 relative flex flex-col justify-start items-center">
+    <div className="min-h-screen w-full bg-background-primary px-6 py-6 relative flex flex-col justify-start items-center">
       {/* back button */}
       <button
         onClick={onBack}
@@ -99,7 +99,7 @@ export default function LoginForm({ onBack, onSwitch }: EmailFormProps) {
         </div>
       </form>
 
-      <div className="fixed bottom-0 left-0 right-0 px-6 pb-12 bg-tertiary">
+      <div className="fixed bottom-0 left-0 right-0 px-6 pb-12 bg-background-primary">
         <button
           type="submit"
           form="signup-form"

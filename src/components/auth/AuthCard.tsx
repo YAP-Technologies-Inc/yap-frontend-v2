@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import AuthButton from "@/components/auth/AuthButtons";
-import { TablerBrandGoogle, TablerBrandAppleFilled, TablerMail } from "@/icons";
-import group from "@/assets/group.png";
-import Image from "next/image";
-import AuthLogo from "../../components/auth/AuthLogo";
+import AuthButton from '@/components/auth/AuthButtons';
+import { TablerBrandGoogle, TablerBrandAppleFilled, TablerMail } from '@/icons';
+import group from '@/assets/group.png';
+import Image from 'next/image';
+import AuthLogo from '../../components/auth/AuthLogo';
 interface AuthCardProps {
   onEmailClick: () => void;
   onSwitch: () => void;
@@ -12,21 +12,21 @@ interface AuthCardProps {
 
 export default function AuthCard({ onEmailClick, onSwitch }: AuthCardProps) {
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-start bg-quaternary">
+    <div className="min-h-screen w-full overflow-x-hidden flex flex-col items-center justify-start bg-quaternary">
       <AuthLogo />
 
       {/* Group Image */}
-      <div className="w-full max-w-md pt-28 px-6">
+      <div className="w-full max-w-md pt-28 px-6 overflow-hidden">
         <img
           src={group.src}
           alt="Group"
-          className="w-full object-cover rounded-xl"
+          className="w-full max-w-full object-cover rounded-xl"
         />
       </div>
 
       {/* Auth Card */}
       <div
-        className="bg-tertiary w-full px-6 py-10 rounded-t-3xl shadow-lg
+        className="bg-background-primary w-full px-6 py-10 rounded-t-3xl shadow-lg
                    sm:max-w-md sm:px-8 sm:py-12
                    lg:max-w-lg xl:max-w-xl
                    flex flex-col items-center justify-center h-auto min-h-[50vh] mt-auto"
@@ -56,7 +56,7 @@ export default function AuthCard({ onEmailClick, onSwitch }: AuthCardProps) {
         </div>
 
         <p className="text-center text-sm mt-8 text-[#5C4B4B]">
-          Already have an account?{" "}
+          Already have an account?{' '}
           <span className="underline cursor-pointer" onClick={onSwitch}>
             Sign in
           </span>
