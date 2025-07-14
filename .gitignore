@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# ignore our mock data
+/src/mock/
+
 # production
 /build
 

@@ -1,92 +1,55 @@
-// TODO: This file is super hacked together 
-// and needs to be cleaned up. The UI and UX needs to be improved.
-// But works for now 
+'use client';
 
-
-"use client";
-import { useState } from "react";
-import { TablerChevronLeft } from "@/icons";
-import AuthLogo from "@/components/auth/AuthLogo";
+import { TablerChevronLeft } from '@/icons';
+import AuthLogo from '@/components/auth/AuthLogo';
 
 interface Props {
   onNext: () => void;
-  onBack?: () => void;
+  onBack: () => void;
 }
 
+const languages = ['Spanish', 'French'];
+
 export default function SelectLanguageForm({ onNext, onBack }: Props) {
-  const [languageData, setLanguageData] = useState({
-    native_language: "",
-    language_to_learn: "Spanish",
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setLanguageData({ ...languageData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // TODO: send this to the backend or next step
+  const handleSelect = (lang: string) => {
+    console.log(`Selected language: ${lang}`);
+    // TODO: Save to user profile or pass to next step
     onNext();
   };
 
   return (
-    <div className="min-h-screen w-full bg-tertiary px-6 py-6 relative flex flex-col justify-start items-center">
+    <div className="min-h-screen w-full bg-tertiary px-6 py-6 relative flex flex-col">
       {/* Back Button */}
-      {onBack && (
-        <button
-          onClick={onBack}
-          className="absolute left-4 top-12 text-2xl font-semibold text-[#2D1C1C]"
-        >
-          <TablerChevronLeft />
-        </button>
-      )}
+      <button
+        onClick={onBack}
+        className="absolute left-4 top-12 text-[#2D1C1C]"
+      >
+        <TablerChevronLeft className="w-6 h-6" />
+      </button>
 
-      {/* Yap Logo */}
+      {/* Logo */}
       <AuthLogo />
 
-      <h2 className="text-2xl font-bold text-center text-[#2D1C1C] pt-28 mb-2">
-        Language Preferences
+      {/* Heading */}
+      <h2 className="text-sm font-semibold text-center text-[#2D1C1C] pt-28">
+        Select a language
       </h2>
-      <p className="text-base text-center text-[#5C4B4B] mb-6">
-        Tell us what you speak and want to learn.
+      <p className="text-lg font-bold text-center text-[#2D1C1C] mb-6">
+        What language would you like to learn?
       </p>
 
-      <form
-        onSubmit={handleSubmit}
-        className="w-full max-w-sm flex flex-col gap-4"
-      >
-        <select
-          name="native_language"
-          value={languageData.native_language}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-3 rounded-xl bg-white shadow-sm border border-gray-200 text-[#2D1C1C] outline-none"
-        >
-          <option value="" disabled>
-            Select your native language
-          </option>
-          <option value="English">English</option>
-        </select>
-
-        <select
-          name="language_to_learn"
-          value={languageData.language_to_learn}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-3 rounded-xl bg-white shadow-sm border border-gray-200 text-[#2D1C1C] outline-none"
-        >
-          <option value="Spanish">Spanish</option>
-        </select>
-
-        <div className="fixed bottom-0 left-0 right-0 px-6 pb-12 bg-tertiary">
+      {/* Language Buttons */}
+      <div className="flex flex-col gap-3 max-w-sm w-full mx-auto">
+        {languages.map((lang) => (
           <button
-            type="submit"
-            className="w-full bg-[#2D1C1C] text-white font-semibold py-3 rounded-full shadow-md mb-3"
+            key={lang}
+            onClick={() => handleSelect(lang)}
+            className="w-full bg-white rounded-xl px-4 py-3 text-left text-[#2D1C1C] text-base font-medium shadow-sm border border-gray-200"
           >
-            Next
+            {lang}
           </button>
-        </div>
-      </form>
+        ))}
+      </div>
     </div>
   );
 }

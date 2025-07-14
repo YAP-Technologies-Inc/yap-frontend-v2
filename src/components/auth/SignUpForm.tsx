@@ -3,12 +3,12 @@
 // It includes fields for name, email, password, and confirm password.
 // TODO: Hook this up to our auth logic, ensuring nothing can be seen on the frontend that shouldn't be.
 
-"use client";
-import { useState } from "react";
-import { TablerChevronLeft, TablerEye, TablerEyeOff } from "@/icons";
-import SecuringLoader from "../loading/SecuringLoader";
-import AuthLogo from "@/components/auth/AuthLogo";
-import SelectLanguageForm from "@/components/auth/SelectLanguageForm";
+'use client';
+import { useState } from 'react';
+import { TablerChevronLeft, TablerEye, TablerEyeOff } from '@/icons';
+import SecuringLoader from '../loading/SecuringLoader';
+import AuthLogo from '@/components/auth/AuthLogo';
+import SelectLanguageForm from '@/components/auth/SelectLanguageForm';
 
 interface EmailFormProps {
   onBack: () => void;
@@ -16,15 +16,15 @@ interface EmailFormProps {
 }
 
 export default function SignUpForm({ onBack, onSwitch }: EmailFormProps) {
-  const [step, setStep] = useState<"signup" | "language" | "loading">("signup");
+  const [step, setStep] = useState<'signup' | 'language' | 'loading'>('signup');
   const [showPassword1, setShowPassword1] = useState(false);
   const [showPassword2, setShowPassword2] = useState(false);
 
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
+    name: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,15 +34,20 @@ export default function SignUpForm({ onBack, onSwitch }: EmailFormProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match.");
+      alert('Passwords do not match.');
       return;
     }
-    setStep("language");
+    setStep('language');
   };
 
-  if (step === "loading") return <SecuringLoader />;
-  if (step === "language")
-    return <SelectLanguageForm onNext={() => setStep("loading")} />;
+  if (step === 'loading') return <SecuringLoader />;
+  if (step === 'language')
+    return (
+      <SelectLanguageForm
+        onNext={() => setStep('loading')}
+        onBack={() => setStep('signup')}
+      />
+    );
 
   return (
     <div className="min-h-screen w-full bg-tertiary px-6 py-6 relative flex flex-col justify-start items-center">
@@ -89,7 +94,7 @@ export default function SignUpForm({ onBack, onSwitch }: EmailFormProps) {
         />
         <div className="relative">
           <input
-            type={showPassword1 ? "text" : "password"}
+            type={showPassword1 ? 'text' : 'password'}
             name="password"
             placeholder="Password"
             value={formData.password}
@@ -112,7 +117,7 @@ export default function SignUpForm({ onBack, onSwitch }: EmailFormProps) {
 
         <div className="relative">
           <input
-            type={showPassword2 ? "text" : "password"}
+            type={showPassword2 ? 'text' : 'password'}
             name="confirmPassword"
             placeholder="Re-enter Password"
             value={formData.confirmPassword}
