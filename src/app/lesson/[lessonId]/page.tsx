@@ -55,7 +55,7 @@ export default function LessonPage() {
 
   // If not started, show the welcome screen
   return !started ? (
-    <div className="min-h-screen w-full bg-[#FDF7F2] flex flex-col justify-between items-center px-6 py-12 relative">
+    <div className="min-h-screen w-full bg-background-primary flex flex-col justify-between items-center px-6 py-12 relative">
       {/* Back button */}
       <button
         onClick={() => router.push('/home')}
@@ -84,7 +84,7 @@ export default function LessonPage() {
       >
         {lessonTitle}
       </button>
-      {/* if lesson started then render LessonUI */}
+      {/* if lesson started then render */}
     </div>
   ) : (
     <LessonUi
