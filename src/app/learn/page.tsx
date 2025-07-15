@@ -1,12 +1,27 @@
+// Learn page
+// This page serves as the main entry point for the learning section of the app.
 import BottomNavBar from '@/components/layout/BottomNavBar';
-import InfoListCard from '@/components/ui/InfoListCard';
+import ProgressCard from '@/components/ui/ProgressCard';
+import LearnedWordGrid from '@/components/lesson/LearnedWordGrid';
+
 export default function Learn() {
   return (
-    <div className="bg-background-primary min-h-screen flex items-center justify-center">
+    <div className="bg-background-primary min-h-screen w-full flex flex-col">
+      <div className="px-6">
+        <h1 className="text-2xl font-bold text-secondary pt-8 text-left">
+          Learn
+        </h1>
 
-      <h1 className="absolute top-0 left-0 m-4 text-2xl font-bold pt-8 text-secondary flex justify-start items-start">
-        Learn
-      </h1>
+        <div className="mt-6 w-full">
+          <ProgressCard />
+        </div>
+
+        <h2 className="text-2xl font-bold text-secondary pt-8 text-left">
+          Daily Quiz
+        </h2>
+
+        <LearnedWordGrid />
+      </div>
 
       <BottomNavBar />
     </div>

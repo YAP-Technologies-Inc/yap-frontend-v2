@@ -46,7 +46,7 @@ export default function LessonUi({
     <div className="min-h-screen w-full bg-background-primary flex flex-col pt-4 pb-28 px-4">
       {/* Exit + Progress bar */}
       <div className="w-screen flex items-center gap-3 px-6 mb-4 -ml-4">
-        <button onClick={() => router.push('/home')} className="text-[#2D1C1C]">
+        <button onClick={() => router.push('/home')} className="text-secondary">
           <TablerX className="w-6 h-6" />
         </button>
         <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">

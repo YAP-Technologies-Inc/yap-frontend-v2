@@ -37,7 +37,7 @@ export default function LessonPage() {
   const vocabItems = lessonData.new_vocabulary.map((word) => ({
     question: word.term,
     example_answer: word.examples?.[0] || '',
-    type: 'word',
+    type: 'word' as const,
   }));
 
   //Prepare speaking exercises
@@ -45,7 +45,7 @@ export default function LessonPage() {
     exercise.items.map((item) => ({
       question: item.question,
       example_answer: item.example_answer || '',
-      type: 'sentence',
+      type: 'sentence' as const,
     }))
   );
 
@@ -59,7 +59,7 @@ export default function LessonPage() {
       {/* Back button */}
       <button
         onClick={() => router.push('/home')}
-        className="absolute top-6 left-4 text-[#2D1C1C]"
+        className="absolute top-6 left-4 text-secondary"
       >
         <TablerChevronLeft className="w-6 h-6" />
       </button>
@@ -67,20 +67,20 @@ export default function LessonPage() {
       {/* Top greeting block */}
       <div className="flex flex-col items-center text-center mt-20 space-y-4">
         <div className="w-24 h-24 rounded-full bg-yellow-300 flex items-center justify-center">
-          <span className="text-4xl font-extrabold text-[#2D1C1C]">
+          <span className="text-4xl font-extrabold text-secondary">
             {firstInitial}
           </span>
         </div>
-        <h1 className="text-2xl font-extrabold text-[#2D1C1C]">
+        <h1 className="text-2xl font-extrabold text-secondary">
           Welcome {mockUserProfile.name}
         </h1>
-        <p className="text-sm text-[#5C4B4B]">Hola, ¿cómo estás hoy?</p>
+        <p className="text-sm text-secondary">Hola, ¿cómo estás hoy?</p>
       </div>
 
       {/* Bottom button */}
       <button
         onClick={() => setStarted(true)}
-        className="w-full max-w-xs py-4 rounded-full bg-[#2D1C1C] text-white font-semibold shadow-md mb-4"
+        className="w-full max-w-xs py-4 rounded-full bg-secondary text-white font-semibold shadow-md mb-4"
       >
         {lessonTitle}
       </button>
