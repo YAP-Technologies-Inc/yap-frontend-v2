@@ -1,14 +1,16 @@
-// LessonCard.tsx
+// This component renders a card for each lesson in the dashboard.
+// It displays the lesson title, description, and status (completed, locked, or available).
+// Clicking on an available lesson navigates to the lesson page.
 'use client';
 
 import { useRouter } from 'next/navigation';
 import { TablerCheck } from '@/icons';
 
 interface LessonCardProps {
+  id: string;
   title: string;
   description: string;
   status: 'completed' | 'locked' | 'available';
-  lessonId: string;
 }
 
 export default function LessonCard({

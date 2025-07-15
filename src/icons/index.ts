@@ -1,5 +1,3 @@
-import { TablerRefresh } from './Refresh';
-
 export { TablerMail } from './Mail';
 export { TablerBrandGoogle } from './Google';
 export { TablerBrandAppleFilled } from './Apple';
@@ -16,3 +14,7 @@ export { TablerRefresh } from './Refresh';
 export { TablerMicrophone } from './Microphone';
 export { TablerPlayerPauseFilled } from './Pause';
 export { TablerVolume } from './Audio';
+export { TablerChevronRight } from './ChevronRight';
+export { TablerInfoCircle } from './Info';
+export { TablerHelp } from './Help';
+export {TablerFileTextShield} from './TextShield';

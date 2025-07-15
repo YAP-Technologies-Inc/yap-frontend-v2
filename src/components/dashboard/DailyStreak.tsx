@@ -1,6 +1,7 @@
+// Probably need more testing for this but seems to work at a basic level for now
 'use client';
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TablerCheck } from '@/icons';
 
 const days = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
@@ -18,10 +19,8 @@ const getStartOfWeek = () => {
 };
 
 export default function DailyStreak() {
-  const [completedDays, setCompletedDays] = useState<boolean[]>(
-    Array(7).fill(false)
-  );
-  const [weekStart, setWeekStart] = useState<string>(getStartOfWeek());
+  const [completedDays, setCompletedDays] = useState<boolean[]>(Array(7).fill(false));
+  const [totalStreak, setTotalStreak] = useState('0');
 
   const today = new Date();
   const todayIndex = today.getDay() === 0 ? 6 : today.getDay() - 1;
@@ -31,7 +30,7 @@ export default function DailyStreak() {
     const thisWeek = getStartOfWeek();
     const saved = localStorage.getItem(STORAGE_KEY);
     const lastLoginStr = localStorage.getItem(LAST_LOGIN_KEY);
-    const totalStreak = parseInt(localStorage.getItem(TOTAL_STREAK_KEY) || '0');
+    const storedStreak = parseInt(localStorage.getItem(TOTAL_STREAK_KEY) || '0');
 
     let newStreak = 1;
 
@@ -41,21 +40,22 @@ export default function DailyStreak() {
       const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
 
       if (diffDays === 1) {
-        newStreak = totalStreak + 1;
+        newStreak = storedStreak + 1;
       } else if (diffDays === 0) {
-        newStreak = totalStreak; // same day, no change
+        newStreak = storedStreak; // same day, no change
       } else {
         newStreak = 1; // skipped day(s), reset
       }
     }
 
-    // Save streak and login time
     if (lastLoginStr !== todayStr) {
       localStorage.setItem(TOTAL_STREAK_KEY, newStreak.toString());
       localStorage.setItem(LAST_LOGIN_KEY, todayStr);
     }
 
-    // Handle weekly checkmarks
+    setTotalStreak(newStreak.toString());
+
+    // Weekly checkmarks
     if (saved) {
       const parsed = JSON.parse(saved);
       if (parsed.weekStart === thisWeek) {
@@ -79,8 +79,6 @@ export default function DailyStreak() {
     );
   }, []);
 
-  const streakCount = completedDays.filter(Boolean).length;
-  const totalStreak = localStorage.getItem(TOTAL_STREAK_KEY) || '0';
 
   return (
     <div className="bg-secondary w-full rounded-xl shadow px-6 py-4 flex flex-col border-b-2 border-gray-300 relative">
@@ -105,7 +103,7 @@ export default function DailyStreak() {
                   completed
                     ? 'bg-quaternary text-black'
                     : 'border-white text-white'
-                } ${isToday ? 'ring-2 ring-background-primary' : ''}`}
+                } ${isToday ? 'ring-2 ring-tertiary' : ''}`}
               >
                 {completed && <TablerCheck className="w-5 h-5 text-white" />}
               </div>
