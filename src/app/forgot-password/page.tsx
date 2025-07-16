@@ -29,17 +29,17 @@ export default function ForgotPasswordPage() {
       {/* back button */}
       <button
         onClick={() => router.back()}
-        className="absolute left-4 top-12 text-2xl font-semibold text-[#2D1C1C]"
+        className="absolute left-4 top-12 text-2xl font-semibold text-secondary"
       >
         <TablerChevronLeft />
       </button>
 
       <AuthLogo />
 
-      <h2 className="text-2xl font-bold text-center text-[#2D1C1C] mb-1 pt-28">
+      <h2 className="text-2xl font-bold text-center text-secondary mb-1 pt-28">
         Forgot Password
       </h2>
-      <p className="text-sm text-center text-[#5C4B4B] mb-6">
+      <p className="text-sm text-center text-secondary mb-6">
         Enter the email associated with your account.
       </p>
 
@@ -54,7 +54,7 @@ export default function ForgotPasswordPage() {
           placeholder="Email"
           value={email}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-xl bg-white shadow-sm border border-gray-200 placeholder-[#A59C9C] text-[#2D1C1C] outline-none"
+          className="w-full px-4 py-3 rounded-xl bg-white shadow-sm border border-gray-200 placeholder-[#A59C9C] text-secondary outline-none"
           required
         />
       </form>
@@ -63,7 +63,7 @@ export default function ForgotPasswordPage() {
         <button
           type="submit"
           form="forgot-form"
-          className="w-full bg-[#2D1C1C] text-white font-semibold py-3 rounded-full shadow-md mb-3"
+          className="w-full bg-secondary text-white font-semibold py-3 rounded-full shadow-md mb-3"
         >
           Next
         </button>

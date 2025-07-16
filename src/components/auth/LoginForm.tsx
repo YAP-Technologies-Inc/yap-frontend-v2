@@ -35,7 +35,7 @@ export default function LoginForm({ onBack, onSwitch }: EmailFormProps) {
       {/* back button */}
       <button
         onClick={onBack}
-        className="absolute left-4 top-12 text-2xl font-semibold text-[#2D1C1C]"
+        className="absolute left-4 top-12 text-2xl font-semibold text-secondary"
       >
         <TablerChevronLeft />
       </button>
@@ -43,10 +43,10 @@ export default function LoginForm({ onBack, onSwitch }: EmailFormProps) {
       <AuthLogo />
 
       {/* title */}
-      <h2 className="text-2xl font-bold text-center text-[#2D1C1C] mb-1 pt-28">
+      <h2 className="text-2xl font-bold text-center text-secondary mb-1 pt-28">
         Sign in
       </h2>
-      <p className="text-sm text-center text-[#5C4B4B] mb-6">
+      <p className="text-sm text-center text-secondary mb-6">
         Welcome back! Enter your credentials to continue.
       </p>
 
@@ -62,7 +62,7 @@ export default function LoginForm({ onBack, onSwitch }: EmailFormProps) {
           placeholder="Email"
           value={formData.email}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-xl bg-white shadow-sm border border-gray-200 placeholder-[#A59C9C] text-[#2D1C1C] outline-none"
+          className="w-full px-4 py-3 rounded-xl bg-white shadow-sm border border-gray-200 placeholder-[#A59C9C] text-secondary outline-none"
           required
         />
         <div className="relative w-full">
@@ -72,13 +72,13 @@ export default function LoginForm({ onBack, onSwitch }: EmailFormProps) {
             placeholder="Password"
             value={formData.password}
             onChange={handleChange}
-            className="w-full px-4 py-3 pr-12 rounded-xl bg-white shadow-sm border border-gray-200 placeholder-[#A59C9C] text-[#2D1C1C] outline-none"
+            className="w-full px-4 py-3 pr-12 rounded-xl bg-white shadow-sm border border-gray-200 placeholder-[#A59C9C] text-secondary outline-none"
             required
           />
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 text-[#5C4B4B]"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 text-secondary"
           >
             {showPassword ? (
               <TablerEyeOff className="w-5 h-5" />
@@ -92,7 +92,7 @@ export default function LoginForm({ onBack, onSwitch }: EmailFormProps) {
           <button
             type="button"
             onClick={() => router.push("/forgot-password")}
-            className="text-sm text-[#5C4B4B] underline"
+            className="text-sm text-secondary underline"
           >
             Forgot password?
           </button>
@@ -103,7 +103,7 @@ export default function LoginForm({ onBack, onSwitch }: EmailFormProps) {
         <button
           type="submit"
           form="signup-form"
-          className="w-full bg-[#2D1C1C] text-white font-semibold py-3 rounded-full shadow-md mb-3"
+          className="w-full bg-secondary text-white font-semibold py-3 rounded-full shadow-md mb-3"
         >
           Next
         </button>

@@ -54,7 +54,7 @@ export default function SignUpForm({ onBack, onSwitch }: EmailFormProps) {
       {/* return to prev page*/}
       <button
         onClick={onBack}
-        className="absolute left-4 top-12 text-2xl font-semibold text-[#2D1C1C]"
+        className="absolute left-4 top-12 text-2xl font-semibold text-secondary"
       >
         <TablerChevronLeft />
       </button>
@@ -62,10 +62,10 @@ export default function SignUpForm({ onBack, onSwitch }: EmailFormProps) {
       <AuthLogo />
 
       {/* title section */}
-      <h2 className="text-2xl font-bold text-center text-[#2D1C1C] mb-1 pt-28">
+      <h2 className="text-2xl font-bold text-center text-secondary mb-1 pt-28">
         Create an account
       </h2>
-      <p className="text-base text-center text-[#5C4B4B] mb-6">
+      <p className="text-base text-center text-secondary mb-6">
         Let’s get started! Enter the details to create an account.
       </p>
       <div className="py-4"></div>
@@ -80,7 +80,7 @@ export default function SignUpForm({ onBack, onSwitch }: EmailFormProps) {
           placeholder="Full Name"
           value={formData.name}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-xl bg-white shadow-sm border border-gray-200 placeholder-[#A59C9C] text-[#2D1C1C] outline-none"
+          className="w-full px-4 py-3 rounded-xl bg-white shadow-sm border border-gray-200 placeholder-[#A59C9C] text-secondary outline-none"
           required
         />
         <input
@@ -89,7 +89,7 @@ export default function SignUpForm({ onBack, onSwitch }: EmailFormProps) {
           placeholder="Email"
           value={formData.email}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-xl bg-white shadow-sm border border-gray-200 placeholder-[#A59C9C] text-[#2D1C1C] outline-none"
+          className="w-full px-4 py-3 rounded-xl bg-white shadow-sm border border-gray-200 placeholder-[#A59C9C] text-secondary outline-none"
           required
         />
         <div className="relative">
@@ -99,13 +99,13 @@ export default function SignUpForm({ onBack, onSwitch }: EmailFormProps) {
             placeholder="Password"
             value={formData.password}
             onChange={handleChange}
-            className="w-full px-4 py-3 pr-12 rounded-xl bg-white shadow-sm border border-gray-200 placeholder-[#A59C9C] text-[#2D1C1C] outline-none"
+            className="w-full px-4 py-3 pr-12 rounded-xl bg-white shadow-sm border border-gray-200 placeholder-[#A59C9C] text-secondary outline-none"
             required
           />
           <button
             type="button"
             onClick={() => setShowPassword1(!showPassword1)}
-            className="absolute right-4 top-1/2 -translate-y-1/2 text-[#5C4B4B]"
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-secondary"
           >
             {showPassword1 ? (
               <TablerEyeOff className="w-5 h-5" />
@@ -122,13 +122,13 @@ export default function SignUpForm({ onBack, onSwitch }: EmailFormProps) {
             placeholder="Re-enter Password"
             value={formData.confirmPassword}
             onChange={handleChange}
-            className="w-full px-4 py-3 pr-12 rounded-xl bg-white shadow-sm border border-gray-200 placeholder-[#A59C9C] text-[#2D1C1C] outline-none"
+            className="w-full px-4 py-3 pr-12 rounded-xl bg-white shadow-sm border border-gray-200 placeholder-[#A59C9C] text-secondary outline-none"
             required
           />
           <button
             type="button"
             onClick={() => setShowPassword2(!showPassword2)}
-            className="absolute right-4 top-1/2 -translate-y-1/2 text-[#5C4B4B]"
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-secondary"
           >
             {showPassword2 ? (
               <TablerEyeOff className="w-5 h-5" />
@@ -141,7 +141,7 @@ export default function SignUpForm({ onBack, onSwitch }: EmailFormProps) {
         <div className="fixed bottom-0 left-0 right-0 px-6 pb-12 bg-background-primary">
           <button
             type="submit"
-            className="w-full bg-[#2D1C1C] text-white font-semibold py-3 rounded-full shadow-md mb-3"
+            className="w-full bg-secondary text-white font-semibold py-3 rounded-full shadow-md mb-3"
           >
             Next
           </button>
