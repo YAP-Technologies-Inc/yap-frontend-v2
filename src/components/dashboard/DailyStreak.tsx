@@ -101,9 +101,9 @@ export default function DailyStreak() {
               <div
                 className={`w-10 h-10 rounded-full flex items-center justify-center border-2 text-lg font-bold ${
                   completed
-                    ? 'bg-quaternary text-black'
+                    ? 'bg-quaternary text-black '
                     : 'border-white text-white'
-                } ${isToday ? 'ring-2 ring-tertiary' : ''}`}
+                } ${isToday ? 'ring-2  ring-tertiary' : ''}`}
               >
                 {completed && <TablerCheck className="w-5 h-5 text-white" />}
               </div>
