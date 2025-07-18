@@ -15,7 +15,7 @@ interface EmailFormProps {
   onSwitch: () => void;
 }
 
-export default function SignUpForm({ onBack, onSwitch }: EmailFormProps) {
+export default function SignUpForm({ onBack }: EmailFormProps) {
   const [step, setStep] = useState<'signup' | 'language' | 'loading'>('signup');
   const [showPassword1, setShowPassword1] = useState(false);
   const [showPassword2, setShowPassword2] = useState(false);

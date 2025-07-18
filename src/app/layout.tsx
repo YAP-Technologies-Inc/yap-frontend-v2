@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono, Outfit } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Outfit } from 'next/font/google';
+import './globals.css';
 import ClientWrapper from '@/components/ClientWrapper';
 
 // const geistSans = Geist({
@@ -14,14 +14,14 @@ import ClientWrapper from '@/components/ClientWrapper';
 // });
 
 const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-outfit",
-  display: "swap",
+  subsets: ['latin'],
+  variable: '--font-outfit',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: "Yap2Learn",
-  description: "Making language learning fun and rewarding",
+  title: 'Yap2Learn',
+  description: 'Making language learning fun and rewarding',
 };
 export default function RootLayout({
   children,
@@ -29,11 +29,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-secondary">
       <body
         className={`${outfit.variable} font-sans antialiased`}
         style={{
-          fontFamily: "var(--font-outfit), Arial, Helvetica, sans-serif",
+          fontFamily: 'var(--font-outfit), Arial, Helvetica, sans-serif',
         }}
       >
         <ClientWrapper>{children}</ClientWrapper>
