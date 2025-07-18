@@ -18,25 +18,27 @@ export default function SelectLanguageForm({ onNext, onBack }: Props) {
   };
 
   return (
-    <div className="min-h-screen w-full bg-background-primary px-6 py-6 relative flex flex-col">
+    <div className="min-h-screen w-full bg-background-primary px-6  relative flex flex-col">
       {/* Back Button */}
       <button
         onClick={onBack}
-        className="absolute left-4 top-12 text-[#2D1C1C]"
+        className="absolute left-2 top-2 text-2xl font-semibold text-secondary"
       >
-        <TablerChevronLeft className="w-6 h-6" />
+        <div className="mt-2">
+          <TablerChevronLeft />
+        </div>
       </button>
 
-      {/* Logo */}
       <AuthLogo />
 
-      {/* Heading */}
-      <h2 className="text-sm font-semibold text-center text-[#2D1C1C] pt-28">
-        Select a language
-      </h2>
-      <p className="text-lg font-bold text-center text-[#2D1C1C] mb-6">
-        What language would you like to learn?
-      </p>
+      <div className="mt-6 mb-4 text-center">
+        <h2 className="text-sm font-semibold text-[#2D1C1C]">
+          Select a language
+        </h2>
+        <p className="text-lg font-bold text-[#2D1C1C] mt-1">
+          What language would you like to learn?
+        </p>
+      </div>
 
       {/* Language Buttons */}
       <div className="flex flex-col gap-3 max-w-sm w-full mx-auto">

@@ -1,8 +1,8 @@
-// Probably need more testing for this but seems to work at a basic level for now
 'use client';
 
 import React, { useState, useEffect } from 'react';
 import { TablerCheck } from '@/icons';
+import flame from '@/assets/flame.png'; // 🔥 Replace with your correct path
 
 const days = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
 const STORAGE_KEY = 'login-days';
@@ -11,7 +11,7 @@ const LAST_LOGIN_KEY = 'last-login-day';
 
 const getStartOfWeek = () => {
   const date = new Date();
-  const day = date.getDay(); // Sunday = 0
+  const day = date.getDay();
   const diff = day === 0 ? -6 : 1 - day;
   date.setDate(date.getDate() + diff);
   date.setHours(0, 0, 0, 0);
@@ -19,7 +19,9 @@ const getStartOfWeek = () => {
 };
 
 export default function DailyStreak() {
-  const [completedDays, setCompletedDays] = useState<boolean[]>(Array(7).fill(false));
+  const [completedDays, setCompletedDays] = useState<boolean[]>(
+    Array(7).fill(false)
+  );
   const [totalStreak, setTotalStreak] = useState('0');
 
   const today = new Date();
@@ -30,7 +32,9 @@ export default function DailyStreak() {
     const thisWeek = getStartOfWeek();
     const saved = localStorage.getItem(STORAGE_KEY);
     const lastLoginStr = localStorage.getItem(LAST_LOGIN_KEY);
-    const storedStreak = parseInt(localStorage.getItem(TOTAL_STREAK_KEY) || '0');
+    const storedStreak = parseInt(
+      localStorage.getItem(TOTAL_STREAK_KEY) || '0'
+    );
 
     let newStreak = 1;
 
@@ -42,9 +46,9 @@ export default function DailyStreak() {
       if (diffDays === 1) {
         newStreak = storedStreak + 1;
       } else if (diffDays === 0) {
-        newStreak = storedStreak; // same day, no change
+        newStreak = storedStreak;
       } else {
-        newStreak = 1; // skipped day(s), reset
+        newStreak = 1;
       }
     }
 
@@ -55,7 +59,6 @@ export default function DailyStreak() {
 
     setTotalStreak(newStreak.toString());
 
-    // Weekly checkmarks
     if (saved) {
       const parsed = JSON.parse(saved);
       if (parsed.weekStart === thisWeek) {
@@ -79,13 +82,13 @@ export default function DailyStreak() {
     );
   }, []);
 
-
   return (
     <div className="bg-secondary w-full rounded-xl shadow px-6 py-4 flex flex-col border-b-2 border-gray-300 relative">
-      {/* Header */}
-      <div className="text-white flex items-center justify-between w-full mb-4">
-        <h3 className="text-lg font-semibold">🔥 Daily Streak</h3>
-        <div className="bg-white text-black rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">
+      {/* Header with flame icon and streak count */}
+      <div className="flex items-center gap-2 text-white mb-4">
+        <img src={flame.src} alt="Flame icon" className="w-5 h-5" />
+        <h3 className="text-lg font-semibold">Daily Streak</h3>
+        <div className="ml-auto bg-white text-black rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">
           {totalStreak}
         </div>
       </div>
@@ -99,14 +102,19 @@ export default function DailyStreak() {
           return (
             <div key={`${day}-${index}`} className="flex flex-col items-center">
               <div
-                className={`w-10 h-10 rounded-full flex items-center justify-center border-2 text-lg font-bold ${
-                  completed
-                    ? 'bg-quaternary text-black '
-                    : 'border-white text-white'
-                } ${isToday ? 'ring-2  ring-tertiary' : ''}`}
+                className={`
+                  w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold
+                  ${
+                    completed
+                      ? 'bg-[#3B2727] text-white' // completed filled circle
+                      : 'bg-[#2D1C1C] opacity-60'
+                  } // subtle background ring
+                  ${isToday ? 'ring-2 ring-tertiary' : ''}
+                `}
               >
                 {completed && <TablerCheck className="w-5 h-5 text-white" />}
               </div>
+
               <span className="text-xs text-white mt-1">{day}</span>
             </div>
           );

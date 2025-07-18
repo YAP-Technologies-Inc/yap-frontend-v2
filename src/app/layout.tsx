@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Outfit } from "next/font/google";
 import "./globals.css";
+import ClientWrapper from '@/components/ClientWrapper';
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -22,7 +23,6 @@ export const metadata: Metadata = {
   title: "Yap2Learn",
   description: "Making language learning fun and rewarding",
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -36,7 +36,7 @@ export default function RootLayout({
           fontFamily: "var(--font-outfit), Arial, Helvetica, sans-serif",
         }}
       >
-        {children}
+        <ClientWrapper>{children}</ClientWrapper>
       </body>
     </html>
   );

@@ -17,6 +17,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --safe-top: env(safe-area-inset-top);
+  --safe-bottom: env(safe-area-inset-bottom);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -34,6 +36,8 @@ body, html{
   height: 100svh;
   overflow-x: hidden;  /* prevent sideways scroll only */
   overscroll-behavior-y: none; /* optional: prevents iOS rubber banding */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 

@@ -16,7 +16,7 @@ export default function AuthCard({ onEmailClick, onSwitch }: AuthCardProps) {
       <AuthLogo />
 
       {/* Group Image */}
-      <div className="w-full max-w-md pt-28 px-6 overflow-hidden">
+      <div className="w-full max-w-md pt-18 px-6 overflow-hidden">
         <img
           src={group.src}
           alt="Group"

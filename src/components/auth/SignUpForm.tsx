@@ -50,24 +50,26 @@ export default function SignUpForm({ onBack, onSwitch }: EmailFormProps) {
     );
 
   return (
-    <div className="min-h-screen w-full bg-background-primary px-6 py-6 relative flex flex-col justify-start items-center">
+    <div className="min-h-screen w-full bg-background-primary px-6 relative flex flex-col justify-start items-center">
       {/* return to prev page*/}
       <button
         onClick={onBack}
-        className="absolute left-4 top-12 text-2xl font-semibold text-secondary"
+        className="absolute left-2 top-2 text-2xl font-semibold text-secondary"
       >
-        <TablerChevronLeft />
+        <div className="mt-2">
+          <TablerChevronLeft />
+        </div>
       </button>
 
       <AuthLogo />
 
       {/* title section */}
-      <h2 className="text-2xl font-bold text-center text-secondary mb-1 pt-28">
-        Create an account
-      </h2>
-      <p className="text-base text-center text-secondary mb-6">
-        Let’s get started! Enter the details to create an account.
-      </p>
+      <div className="mt-6 mb-4 text-center">
+        <h2 className="text-2xl font-bold text-secondary">Create an account</h2>
+        <p className="text-base text-secondary mt-1">
+          Let’s get started! Enter the details to create an account.
+        </p>
+      </div>
       <div className="py-4"></div>
       {/* form submission */}
       <form
@@ -138,14 +140,12 @@ export default function SignUpForm({ onBack, onSwitch }: EmailFormProps) {
           </button>
         </div>
 
-        <div className="fixed bottom-0 left-0 right-0 px-6 pb-12 bg-background-primary">
-          <button
-            type="submit"
-            className="w-full bg-secondary text-white font-semibold py-3 rounded-full shadow-md mb-3"
-          >
-            Next
-          </button>
-        </div>
+        <button
+          type="submit"
+          className="w-full bg-secondary text-white font-semibold py-3 rounded-full shadow-md mt-2 mb-2"
+        >
+          Next
+        </button>
       </form>
     </div>
   );

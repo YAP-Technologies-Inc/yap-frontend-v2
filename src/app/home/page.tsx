@@ -26,7 +26,7 @@ export default function HomePage() {
         <div className="w-full mt-6">
           <DailyStreak />
         </div>
-        <h3 className="text-quaternary text-xl font-semibold mt-6">Lessons</h3>
+        <h3 className="text-secondary text-xl font-semibold mt-6">Lessons</h3>
 
         {/* Lessons section */}
         <div className="w-full mt-6">
@@ -43,7 +43,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <h3 className="text-quaternary text-xl font-semibold mt-4 mb-2">
+        <h3 className="text-secondary text-xl font-semibold mt-4 mb-2">
           Daily Quiz
         </h3>
 

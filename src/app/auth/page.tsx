@@ -14,7 +14,14 @@ export default function AuthPage() {
   const [formType, setFormType] = useState<FormType>(null);
 
   return (
-    <div className="min-h-screen w-screen max-w-full bg-background-secondary relative flex flex-col items-center justify-center overflow-x-hidden">
+    <div
+      className="min-h-screen w-screen bg-background-secondary flex flex-col items-center justify-center"
+      style={{
+        paddingTop: 'env(safe-area-inset-top)',
+        paddingBottom: 'env(safe-area-inset-bottom)',
+        backgroundColor: '#2D1C1C', 
+      }}
+    >
       <div className="relative z-10 w-full flex items-center justify-center">
         {formType === 'signup' && (
           <SignUpForm
