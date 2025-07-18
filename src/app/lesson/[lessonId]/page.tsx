@@ -55,17 +55,19 @@ export default function LessonPage() {
 
   // If not started, show the welcome screen
   return !started ? (
-    <div className="min-h-screen w-full bg-background-primary flex flex-col justify-between items-center px-6 py-12 relative">
+    <div className="min-h-screen w-full bg-background-primary flex flex-col items-center px-6 pt-4 relative">
       {/* Back button */}
       <button
         onClick={() => router.push('/home')}
-        className="absolute top-6 left-4 text-secondary"
+        className="absolute left-2 top-2 text-2xl font-semibold text-secondary"
       >
-        <TablerChevronLeft className="w-6 h-6" />
+        <div className="mt-2">
+          <TablerChevronLeft />
+        </div>
       </button>
 
       {/* Top greeting block */}
-      <div className="flex flex-col items-center text-center mt-20 space-y-4">
+      <div className="flex flex-col items-center text-center mt-8 space-y-4">
         <div className="w-24 h-24 rounded-full bg-yellow-300 flex items-center justify-center">
           <span className="text-4xl font-extrabold text-secondary">
             {firstInitial}
@@ -77,14 +79,16 @@ export default function LessonPage() {
         <p className="text-sm text-secondary">Hola, ¿cómo estás hoy?</p>
       </div>
 
-      {/* Bottom button */}
+      {/* Spacer before button */}
+      <div className="mt-10" />
+
+      {/* Start button, now naturally placed below greeting */}
       <button
         onClick={() => setStarted(true)}
-        className="w-full max-w-xs py-4 rounded-full bg-secondary text-white font-semibold shadow-md mb-4"
+        className="w-full max-w-xs py-4 rounded-full bg-secondary text-white font-semibold shadow-md"
       >
         {lessonTitle}
       </button>
-      {/* if lesson started then render */}
     </div>
   ) : (
     <LessonUi

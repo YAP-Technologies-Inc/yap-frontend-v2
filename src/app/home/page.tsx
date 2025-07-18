@@ -14,23 +14,24 @@ import { lessons } from '../../mock/mockLesson';
 
 export default function HomePage() {
   return (
-    <div className="bg-background-primary min-h-screen w-full flex flex-col relative">
-      {/* Render Header */}
-      <div className="flex-1 w-full max-w-4xl mx-auto px-4 py-6 pb-24">
+    <div className="bg-background-primary min-h-screen w-full flex flex-col">
+      <div className="flex-1 w-full max-w-4xl mx-auto pt-4 px-4 ">
         <HeaderGreeting />
-        {/* Render Balance card */}
-        <div className="w-full mt-6">
+
+        {/* Balance Card */}
+        <div className="mt-2">
           <BalanceCard />
         </div>
-        {/* Render daily streak */}
-        <div className="w-full mt-6">
+
+        {/* Daily Streak */}
+        <div className="mt-4">
           <DailyStreak />
         </div>
-        <h3 className="text-secondary text-xl font-semibold mt-6">Lessons</h3>
 
-        {/* Lessons section */}
-        <div className="w-full mt-6">
-          <div className="flex gap-4 overflow-x-auto no-scrollbar w-full h-40">
+        {/* Lessons */}
+        <h3 className="text-secondary text-xl font-semibold mt-2 ">Lessons</h3>
+        <div className="mt-2">
+          <div className="flex gap-4 overflow-x-auto no-scrollbar w-full">
             {lessons.map((lesson) => (
               <LessonCard
                 key={lesson.id}
@@ -43,17 +44,16 @@ export default function HomePage() {
           </div>
         </div>
 
+        {/* Daily Quiz */}
         <h3 className="text-secondary text-xl font-semibold mt-4 mb-2">
           Daily Quiz
         </h3>
-
-        <div className="w-full">
+        <div className="pb-36 relative z-0">
           <DailyQuizCard isUnlocked={false} />
         </div>
-
-        {/* Bottom navigation bar */}
-        <BottomNavBar />
       </div>
+
+      <BottomNavBar />
     </div>
   );
 }

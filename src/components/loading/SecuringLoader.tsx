@@ -32,7 +32,7 @@ export default function SecuringLoader() {
   if (showSplash) return <SplashScreen onFinish={handleFinishSplash} />;
 
   return (
-    <div className="loader-screen">
+    <div className="loader-screen bg-background-primary">
       <div className="loader-container"></div>
       <p className="loader-message">Securing your account...</p>
     </div>

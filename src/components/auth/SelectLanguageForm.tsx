@@ -8,7 +8,9 @@ interface Props {
   onBack: () => void;
 }
 
-const languages = ['Spanish', 'French'];
+import spanishFlag from '@/assets/flags/spanishFlag.png';
+
+const languages = [{ name: 'Spanish', flag: spanishFlag }];
 
 export default function SelectLanguageForm({ onNext, onBack }: Props) {
   const handleSelect = (lang: string) => {
@@ -42,13 +44,18 @@ export default function SelectLanguageForm({ onNext, onBack }: Props) {
 
       {/* Language Buttons */}
       <div className="flex flex-col gap-3 max-w-sm w-full mx-auto">
-        {languages.map((lang) => (
+        {languages.map(({ name, flag }) => (
           <button
-            key={lang}
-            onClick={() => handleSelect(lang)}
-            className="w-full bg-white rounded-xl px-4 py-3 text-left text-[#2D1C1C] text-base font-medium shadow-sm border border-gray-200"
+            key={name}
+            onClick={() => handleSelect(name)}
+            className="w-full bg-white rounded-xl px-4 py-3 text-left text-[#2D1C1C] text-base font-medium shadow-sm border border-gray-200 flex items-center gap-3"
           >
-            {lang}
+            <img
+              src={flag.src}
+              alt={`${name} flag`}
+              className="w-6 h-4 rounded-sm object-cover"
+            />
+            <span>{name}</span>
           </button>
         ))}
       </div>

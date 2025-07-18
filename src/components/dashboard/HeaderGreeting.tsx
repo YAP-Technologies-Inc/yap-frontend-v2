@@ -9,7 +9,7 @@ export default function HeaderGreeting() {
   const firstInitial = mockUserProfile.name.charAt(0).toUpperCase();
 
   return (
-    <div className="flex items-center justify-start w-full px-4 pt-10 pb-4">
+    <div className="flex items-center justify-start w-full ">
       <div className="w-12 h-12 bg-blue-500 rounded-full mr-3 flex items-center justify-center">
         <span className="text-white text-lg font-semibold">{firstInitial}</span>
       </div>
