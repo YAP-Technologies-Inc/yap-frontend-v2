@@ -5,6 +5,7 @@
 import React from 'react';
 import { useSafariUIManager } from '@/hooks/SafariUIManager';
 import ScrollToTop from './ScrollToTop';
+import Providers from '@/app/providers';
 
 export default function ClientWrapper({
   children,
@@ -15,8 +16,12 @@ export default function ClientWrapper({
 
   return (
     <>
+
       <ScrollToTop />
-      {children}
+      <Providers>
+        {/* Wrap children in Providers to ensure auth context is available */}
+        {children}
+      </Providers>
     </>
   );
 }
